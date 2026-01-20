@@ -31,7 +31,7 @@ resource "null_resource" "ansible" {
 	inline = [
 	  "sudo dnf install python3.13-pip -y",
 	  "sudo pip3.11 install ansible",
-	  "ansible-pull -i localhost, -U https://github.com/ckolli66/roboshop-ansible-roles-v1.git main.yaml -e component=${var.instances} -e env=${var.env}"
+	  "ansible-pull -i localhost, -U https://github.com/ckolli66/roboshop-ansible-roles-v1.git main.yaml -e component=${each.key} -e env=${var.env}"
 	]
   }
 }
