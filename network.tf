@@ -3,13 +3,6 @@ resource "aws_security_group" "ec2" {
   name = "${each.key}-${var.env}"
   description = "${each.key}-${var.env}"
 
-
-  egress {
-	from_port        = 0
-	to_port          = 0
-	protocol         = "-1"
-	cidr_blocks      = ["0.0.0.0/0"]
-  }
   dynamic "ingress" {
 	for_each = each.value["ports"]
 	content {
@@ -19,6 +12,12 @@ resource "aws_security_group" "ec2" {
 	  cidr_blocks = ["0.0.0.0/0"]
 	  description = ingress.key
 	}
+  }
+  egress {
+	from_port        = 0
+	to_port          = 0
+	protocol         = "-1"
+	cidr_blocks      = ["0.0.0.0/0"]
   }
   tags = {
 	Name = "${each.key}-${var.env}"
