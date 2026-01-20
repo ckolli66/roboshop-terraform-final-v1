@@ -1,7 +1,6 @@
 env = "dev"
 
 instances = {
-  default = {
 	frontend  = {
 	  ports = { ssh = 22 , nginx = 80 }
       instance_type = "t3.small"
@@ -42,7 +41,6 @@ instances = {
 	  ports = { ssh = 22 , rabbitmq = 5672 }
 	  instance_type = "t3.small"
 	}
-  }
 }
 ami     = "ami-09c813fb71547fc4f"
 zone_id = "Z06404431NXHJ1IDZF7W2"
