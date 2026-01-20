@@ -42,5 +42,5 @@ instances = {
 	  instance_type = "t3.small"
 	}
 }
-ami     = "ami-09c813fb71547fc4f"
+ami     = "ami-0220d79f3f480ecf5"
 zone_id = "Z06404431NXHJ1IDZF7W2"
